@@ -219,11 +219,65 @@ transform: translateY(-20%);
 }
 
 
+.right-corner-section4-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  right: 0px;     /* Places the element 20px from the right edge */
+  width: 300px;    /* Optional: Set a specific width for the SVG */
+  height: auto; 
+}
+
+.left-corner-section4-svg {
+  position: absolute;
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 0px;     /* Places the element 20px from the left edge */
+  width: 350px; 
+  height: auto;
+}
+
+.right-section4-svg {
+  position: absolute;
+  top: 350px;      /* Places the element 20px from the top edge */
+  right: 0px;     /* Places the element 20px from the left edge */
+  width: 200px; 
+  height: auto;
+}
+
+.left-section4-svg {
+  position: absolute;
+  top: 200px;      /* Places the element 20px from the top edge */
+  left: 0px;     /* Places the element 20px from the left edge */
+  width: 200px; 
+  height: auto;
+}
+
+.bottom-center-section4-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 260px; 
+  width: 1400px;    /* Optional: Set a specific width for the SVG */
+  height: auto;    /* Optional: Maintain the aspect ratio */
+  z-index: 1000;   /* Optional: Ensures the SVG stays on top of other content */
+}
+
+
+#Work-Experience p {
+    color: #EEDAAE;
+}
+
 #Projects h2{
   top:-180px;
   position: relative;
   z-index: 1; /* pulls text in front */
   color: #202147;
+  font-size: 50px;
+}
+
+#Work-Experience h2{
+  top:-250px;
+  position: relative;
+  z-index: 1; /* pulls text in front */
+  color: #EEDAAE;
   font-size: 50px;
 }
 
@@ -283,6 +337,12 @@ html {
 #Contact-Me {
   position: relative;
   z-index: 1;
+}
+
+#Work-Experience {
+  position: relative;
+  z-index: 1;
+    background-color: #202147;
 }
 
 .skills-image {
