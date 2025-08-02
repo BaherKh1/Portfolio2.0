@@ -230,3 +230,33 @@ html {
   margin: 50px auto 0 auto; /* Centers the line and adds space above it */
 }
 
+/* Styling for the social media icons container */
+.social-icons {
+  position: absolute; /* Keep the icons in a fixed position on the screen */
+  top: 50%; /* Position the container vertically in the middle of the viewport */
+  left: 20px; /* Adjust this value to set the distance from the left edge */
+  transform: translateY(-50%); /* Adjust the vertical position to be exactly centered */
+  display: flex;
+  flex-direction: column; /* Stack the icons vertically */
+  gap: 40px; /* Add some space between the icons */
+  z-index: 1000; /* Ensure the icons are on top of other content */
+}
+
+/* Styling for the individual icon links */
+.social-icons a {
+  display: block; /* Make the link a block-level element for better spacing */
+  width: 60px; /* Set a fixed width for the icons */
+  height: 40px; /* Set a fixed height for the icons */
+}
+
+/* Styling for the icon images themselves */
+.social-icons img {
+  width: 100%; /* Make the image fill the anchor tag */
+  height: auto; /* Maintain the image's aspect ratio */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition for the hover effect */
+}
+
+/* Hover effect for the icons */
+.social-icons a:hover img {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
