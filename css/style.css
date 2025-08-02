@@ -233,6 +233,11 @@ html {
     margin-top: -91px;
 }
 
+#Projects {
+  position: relative;
+  z-index: 1;
+}
+
 .skills-image {
   position: absolute;
   top: -1px;
@@ -243,7 +248,7 @@ html {
 }
 
 #Skills h2{
-  top:-260px;
+  top:-20px;
   position: relative;
   z-index: 1; /* pulls text in front */
   color: #EEDAAE;
@@ -253,22 +258,6 @@ html {
   position: relative;
   z-index: 1; /* pulls text in front */
     text-align: center;
-}
-
-/* Add this to your style.css file */
-
-.section-start-line {
-  width: 50%; /* Adjust the width as needed */
-  height: 2px; /* Adjust the thickness of the line */
-  background-color: #e24c4b; /* A solid red color for the line */
-  margin: 0 auto 50px auto; /* Centers the line and adds space below it */
-}
-
-.section-end-line {
-  width: 50%; /* Adjust the width as needed */
-  height: 2px; /* Adjust the thickness of the line */
-  background-color: #e24c4b; /* A solid red color for the line */
-  margin: 50px auto 0 auto; /* Centers the line and adds space above it */
 }
 
 /* Styling for the social media icons container */
@@ -301,3 +290,48 @@ html {
 .social-icons a:hover img {
   transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
+
+
+/* Styling for the skills grid container */
+.skills-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: flex-start;
+gap: 40px; /* Adjust the space between boxes */
+position: relative;
+z-index: 1;
+margin-top: 50px;
+}
+
+/* Styling for the individual skill boxes */
+.skill-box {
+width: 300px; /* Adjust the width of the boxes */
+padding: 30px;
+background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+border: 2px solid #e24c4b; /* Red border from your design */
+border-radius: 15px; /* Rounded corners for the boxes */
+text-align: center;
+color: #EEDAAE; /* Light text color */
+}
+
+/* Styling for the headings inside the boxes */
+.skill-box h3 {
+font-size: 1.5rem;
+color: #e24c4b; /* Red color for the heading */
+margin-bottom: 20px;
+}
+
+/* Styling for the lists inside the boxes */
+.skill-box ul {
+list-style: none; /* Remove default list bullets */
+padding: 0;
+margin: 0;
+}
+
+/* Styling for the list items */
+.skill-box ul li {
+font-size: 1.2rem;
+margin-bottom: 10px;
+}
+
