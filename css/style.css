@@ -168,6 +168,47 @@ transform: translateY(-20%);
   height: auto;
 }
 
+.left-section2-svg {
+  position: absolute;
+  top: 200px;      /* Places the element 20px from the top edge */
+  left: 0px;     /* Places the element 20px from the left edge */
+  width: 300px; 
+  height: auto;
+}
+
+.right-section2-svg {
+  position: absolute;
+  top: 200px;      /* Places the element 20px from the top edge */
+  right: 0px;     /* Places the element 20px from the left edge */
+  width: 250px; 
+  height: auto;
+}
+
+.left-corner-section2-svg {
+  position: absolute;
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 0px;     /* Places the element 20px from the left edge */
+  width: 300px; 
+  height: auto;
+}
+
+.right-corner-section2-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  right: 0px;     /* Places the element 20px from the right edge */
+  width: 300px;    /* Optional: Set a specific width for the SVG */
+  height: auto; 
+}
+
+.bottom-center-section2-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 260px; 
+  width: 1400px;    /* Optional: Set a specific width for the SVG */
+  height: auto;    /* Optional: Maintain the aspect ratio */
+  z-index: 1000;   /* Optional: Ensures the SVG stays on top of other content */
+}
+
 html {
   scroll-behavior: smooth;
 }
