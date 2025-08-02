@@ -30,19 +30,62 @@ nav ul {
   font-family:'Electroharmonix';
 }
 
+nav ul li a {
+  /* Set a relative position to act as a container for the pseudo-element */
+  position: relative;
+  font-size: 1.7rem;
+  color: #333;
+  text-decoration: none;
+  padding-bottom: 5px; /* Add some space between the text and the line */
+}
+
+/* Style the line (pseudo-element) in its initial, hidden state */
+nav ul li a::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px; /* Thickness of the line */
+  background-color: #e24c4b; /* A solid red color */
+  transform: scaleX(0); /* Initially, the line has no width */
+  transition: transform 0.3s ease-out; /* Add a smooth animation */
+}
+
+/* Style the line when the link is hovered over */
+nav ul li a:hover::after {
+  transform: scaleX(1); /* Make the line fully visible on hover */
+}
+
 /* Style the container for the moon and text */
 .hero-container {
   position: relative; 
   width: fit-content; 
-  margin: 150px auto 0 auto;
+  margin: -500px auto 0 auto;
+}
+#hero {
+  position: relative;
+  /* The .content-section class already has min-height: 100vh; */
 }
 
-/* Position the moon image normally within the container */
+/* Adjust the positioning of the moon/logo and text */
 img.logo {
   display: block;
+
+  /* You may need to reposition this using top/left or flexbox */
 }
 
-/* Position the text absolutely on top of the moon */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Ensure the hero-text is still positioned correctly */
 .hero-text {
   position: absolute;
   top: 40%;
@@ -53,6 +96,7 @@ img.logo {
   color: #000000;
   z-index: 1;
 }
+
 
 /* Updated h1 rule with 'white-space: nowrap;' */
 .hero-text h1 {
@@ -66,3 +110,123 @@ img.logo {
   font-size: 2.5rem; /* Adjust this value as needed */
   margin: 10px 0 0 0; 
 }
+
+/* Add this new CSS rule to the bottom of your style.css file */
+.bottom-right-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  right: 0px;     /* Places the element 20px from the right edge */
+  width: 250px;    /* Optional: Set a specific width for the SVG */
+  height: auto;    /* Optional: Maintain the aspect ratio */
+  /*z-index: 1000; */  /* Optional: Ensures the SVG stays on top of other content */
+}
+
+/* Add this new CSS rule to the bottom of your style.css file */
+.bottom-left-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 0px;      /* Changed from 'right' to 'left' */
+  width: 370px;    /* Optional: Set a specific width for the SVG */
+  height: auto;    /* Optional: Maintain the aspect ratio */
+  /*z-index: 1000;   /* Optional: Ensures the SVG stays on top of other content */
+}
+
+.bottom-center-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 260px; 
+  width: 1400px;    /* Optional: Set a specific width for the SVG */
+  height: auto;    /* Optional: Maintain the aspect ratio */
+  z-index: 1000;   /* Optional: Ensures the SVG stays on top of other content */
+}
+
+.center-svg {
+  position: absolute; /* Positions the element relative to the viewport */
+  bottom: 0px;    /* Places the element 20px from the bottom edge */
+  left: 700px; 
+  transform: translateX(0%); /* Shifts the element back by half of its own width */
+  width: 500px;    /* Optional: Set a specific width for the SVG */
+  height: auto;    /* Optional: Maintain the aspect ratio */
+  /*z-index: 1000; */  /* Optional: Ensures the SVG stays on top of other content */
+transform: translateY(-20%);
+}
+
+
+.left-svg {
+  position: absolute;
+  top: 0px;      /* Places the element 20px from the top edge */
+  left: 0px;     /* Places the element 20px from the left edge */
+  width: 220px; 
+  height: auto;
+}
+
+.right-svg {
+  position: absolute;
+  top: 0px;      /* Places the element 20px from the top edge */
+  right: 0px;     /* Places the element 20px from the left edge */
+  width: 350px; 
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add basic styling for new sections to create height */
+.content-section {
+  min-height: 100vh; /* This is key! It ensures each section takes up at least the full viewport height */
+  padding: 50px;
+  box-sizing: border-box; /* Ensures padding is included in the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the content vertically in each section */
+  align-items: center;
+  text-align: center;
+  font-family: 'Electroharmonix';
+}
+
+#Skills {
+  position: relative;
+  z-index: 1;
+  background-color: #202147;
+    margin-top: -91px;
+}
+
+.skills-image {
+  position: absolute;
+  top: -1px;
+  left: 260px;
+  width: 1400px;
+  height: auto;
+  z-index: 0; /* stays behind */
+}
+
+#Skills h2{
+  top:-260px;
+  position: relative;
+  z-index: 1; /* pulls text in front */
+  color: #EEDAAE;
+  font-size: 50px;
+}
+#Skills ul {
+  position: relative;
+  z-index: 1; /* pulls text in front */
+    text-align: center;
+}
+
+/* Add this to your style.css file */
+
+.section-start-line {
+  width: 50%; /* Adjust the width as needed */
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: #e24c4b; /* A solid red color for the line */
+  margin: 0 auto 50px auto; /* Centers the line and adds space below it */
+}
+
+.section-end-line {
+  width: 50%; /* Adjust the width as needed */
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: #e24c4b; /* A solid red color for the line */
+  margin: 50px auto 0 auto; /* Centers the line and adds space above it */
+}
+
