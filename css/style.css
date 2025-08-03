@@ -371,13 +371,13 @@ img.logo {
 	width: 100%;
 	max-width: 1000px;
 	min-height: 450px;
-	/* The border below is removed and replaced by the background image */
 	background-image: url('../assets/Group 25.svg');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	padding: 50px;
-	box-sizing: content-box;
+	padding: 50px 10px 50px 10px;
+	box-sizing: border-box;
 }
+
 .projects-scroll-box {
 	display: flex;
 	overflow-x: auto;
@@ -386,6 +386,7 @@ img.logo {
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 	/* Firefox */
+	padding-right: 50px;
 }
 
 .projects-scroll-box::-webkit-scrollbar {
@@ -448,13 +449,16 @@ img.logo {
 }
 
 .project-logo {
-	width: 250px;
+	width: 120px;
 	height: auto;
+    transform: translateY(50px);
 }
 
 .project-text {
 	max-width: 500px;
 	text-align: left;
+	transform: translateY(100px);
+
 }
 
 .project-text p {
