@@ -176,7 +176,7 @@ img.logo {
     /* Optional: Set a specific width for the SVG */
     height: auto;
     /* Optional: Maintain the aspect ratio */
-    z-index: 1000;
+    z-index: 0;
     /* Optional: Ensures the SVG stays on top of other content */
 }
 
