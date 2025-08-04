@@ -123,4 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // audio.play();
     // playPauseIcon.src = 'assets/pause.svg';
     // isPlaying = true;
+
+
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+    }
 });
