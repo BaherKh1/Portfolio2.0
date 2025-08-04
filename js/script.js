@@ -125,8 +125,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // isPlaying = true;
 
 
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('fade-out');
+  const preloader = document.getElementById('preloader');
+
+  // Set the minimum delay time in milliseconds (e.g., 2000 = 2 seconds)
+  const minDelay = 2000;
+
+  // Track if the page is loaded and if the delay has passed
+  let pageLoaded = false;
+  let delayPassed = false;
+
+  // A function to hide the preloader
+  function hidePreloader() {
+    if (pageLoaded && delayPassed) {
+      preloader.classList.add('fade-out');
     }
+  }
+
+  // Event listener for when all resources are loaded
+  window.addEventListener('load', () => {
+    pageLoaded = true;
+    hidePreloader();
+  });
+
+  // Set the manual delay
+  setTimeout(() => {
+    delayPassed = true;
+    hidePreloader();
+  }, minDelay);
 });
