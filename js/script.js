@@ -152,4 +152,66 @@ document.addEventListener('DOMContentLoaded', () => {
     delayPassed = true;
     hidePreloader();
   }, minDelay);
+
+
+
+  // Function to remove the anchor from the URL and scroll to the top
+function resetPagePosition() {
+    // Check if the URL has a hash (an anchor)
+    if (window.location.hash) {
+        // Use the History API to remove the hash without reloading the page
+        // This effectively resets the URL to the base page
+        history.pushState('', document.title, window.location.pathname + window.location.search);
+
+        // Then, smoothly scroll the user to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Call the function when the page loads
+resetPagePosition();
+
+
+
+ const sections = document.querySelectorAll('.content-section');
+
+  const options = {
+    root: null, // The viewport
+    rootMargin: '0px',
+    threshold: 0.5 // Trigger when 50% of the section is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.getAttribute('id');
+        // Update the URL with the section's ID
+        updateURL(`#${sectionId}`);
+
+        // Optional: Highlight the active link in the navigation
+        document.querySelectorAll('nav ul li a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, options);
+
+  // Tell the observer to watch each section
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+  // Function to update the URL (as shown in Step 1)
+  function updateURL(sectionId) {
+    if (history.replaceState) {
+      const newUrl = `${window.location.pathname}${sectionId}`;
+      history.replaceState(null, '', newUrl);
+    }
+  }
 });
