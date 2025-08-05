@@ -1,1250 +1,941 @@
 @font-face {
-    font-family: 'Electroharmonix';
-    src: url('../fonts/electroharmonix.ttf') format('truetype');
+font-family: 'Electroharmonix';
+src: url('../fonts/electroharmonix.ttf') format('truetype');
 }
-
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #EEDAAE;
-    color: #333;
+font-family: 'Inter', sans-serif;
+margin: 0;
+padding: 0;
+background: #EEDAAE;
+color: #333;
 }
-
 header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px 0;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding: 20px 0;
 }
-
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-family: 'Electroharmonix';
+display: flex;
+list-style: none;
+gap: 50px;
+justify-content: center;
+align-items: center;
+margin: 0;
+padding: 0;
+font-family: 'Electroharmonix';
 }
-
 nav ul li a {
-    /* Set a relative position to act as a container for the pseudo-element */
-    position: relative;
-    font-size: 1.7rem;
-    color: #333;
-    text-decoration: none;
-    padding-bottom: 5px;
-    /* Add some space between the text and the line */
+position: relative;
+font-size: 1.7rem;
+color: #333;
+text-decoration: none;
+padding-bottom: 5px;
 }
-
-/* Style the line (pseudo-element) in its initial, hidden state */
 nav ul li a::after {
-    content: '';
-    /* Required for pseudo-elements */
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 5px;
-    /* Thickness of the line */
-    background-color: #e24c4b;
-    /* A solid red color */
-    transform: scaleX(0);
-    /* Initially, the line has no width */
-    transition: transform 0.3s ease-out;
-    /* Add a smooth animation */
+content: '';
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 5px;
+background-color: #e24c4b;
+transform: scaleX(0);
+transition: transform 0.3s ease-out;
 }
-
-/* Style the line when the link is hovered over */
 nav ul li a:hover::after {
-    transform: scaleX(1);
-    /* Make the line fully visible on hover */
+transform: scaleX(1);
 }
-
-/* Style the container for the moon and text */
 .hero-container {
-    position: relative;
-    width: fit-content;
-    margin: -500px auto 0 auto;
+position: relative;
+width: fit-content;
+margin: -500px auto 0 auto;
 }
-
 #hero {
-    position: relative;
-    /* The .content-section class already has min-height: 100vh; */
+position: relative;
 }
-
-/* Adjust the positioning of the moon/logo and text */
 img.logo {
-    display: block;
-
-    /* You may need to reposition this using top/left or flexbox */
+display: block;
 }
-
 #hero {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+min-height: 100vh;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
 }
-
-
-/* Ensure the hero-text is still positioned correctly */
 .hero-text {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: 'Electroharmonix';
-    color: #000000;
-    z-index: 1;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+font-family: 'Electroharmonix';
+color: #000000;
+z-index: 1;
 }
-
-
-/* Updated h1 rule with 'white-space: nowrap;' */
 .hero-text h1 {
-    font-size: 5rem;
-    /* Adjust this value as needed */
-    margin: 0;
-    line-height: 1;
-    white-space: nowrap;
-    /* This is the key to prevent text wrapping */
+font-size: 5rem;
+margin: 0;
+line-height: 1;
+white-space: nowrap;
 }
-
 .hero-text p {
-    font-size: 2.5rem;
-    /* Adjust this value as needed */
-    margin: 10px 0 0 0;
+font-size: 2.5rem;
+margin: 10px 0 0 0;
 }
-
-/* Add this new CSS rule to the bottom of your style.css file */
 .bottom-right-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    right: 0px;
-    /* Places the element 20px from the right edge */
-    width: 250px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    /*z-index: 1000; */
-    /* Optional: Ensures the SVG stays on top of other content */
+position: absolute;
+bottom: 0px;
+right: 0px;
+width: 250px;
+height: auto;
 }
-
-/* Add this new CSS rule to the bottom of your style.css file */
 .bottom-left-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 0px;
-    /* Changed from 'right' to 'left' */
-    width: 370px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    /*z-index: 1000;   /* Optional: Ensures the SVG stays on top of other content */
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 370px;
+height: auto;
 }
-
 .bottom-center-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 260px;
-    width: 1400px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    z-index: 1000;
-    /* Optional: Ensures the SVG stays on top of other content */
+position: absolute;
+bottom: 0px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 1000;
 }
-
 .bottom-center-section5-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 260px;
-    width: 1400px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    z-index: 0;
-    /* Optional: Ensures the SVG stays on top of other content */
+position: absolute;
+bottom: 0px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 0;
 }
-
-
 .center-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 700px;
-    transform: translateX(0%);
-    /* Shifts the element back by half of its own width */
-    width: 500px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    /*z-index: 1000; */
-    /* Optional: Ensures the SVG stays on top of other content */
-    transform: translateY(-20%);
+position: absolute;
+bottom: 0px;
+left: 700px;
+transform: translateX(0%);
+width: 500px;
+height: auto;
+transform: translateY(-20%);
 }
-
-
 .left-svg {
-    position: absolute;
-    top: 0px;
-    /* Places the element 20px from the top edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 220px;
-    height: auto;
+position: absolute;
+top: 0px;
+left: 0px;
+width: 220px;
+height: auto;
 }
-
 .right-svg {
-    position: absolute;
-    top: 0px;
-    /* Places the element 20px from the top edge */
-    right: 0px;
-    /* Places the element 20px from the left edge */
-    width: 350px;
-    height: auto;
+position: absolute;
+top: 0px;
+right: 0px;
+width: 350px;
+height: auto;
 }
-
 .left-section2-svg {
-    position: absolute;
-    top: 200px;
-    /* Places the element 20px from the top edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 300px;
-    height: auto;
+position: absolute;
+top: 200px;
+left: 0px;
+width: 300px;
+height: auto;
 }
-
 .right-section2-svg {
-    position: absolute;
-    top: 200px;
-    /* Places the element 20px from the top edge */
-    right: 0px;
-    /* Places the element 20px from the left edge */
-    width: 250px;
-    height: auto;
+position: absolute;
+top: 200px;
+right: 0px;
+width: 250px;
+height: auto;
 }
-
 .left-corner-section2-svg {
-    position: absolute;
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 300px;
-    height: auto;
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 300px;
+height: auto;
 }
-
 .right-corner-section2-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    right: 0px;
-    /* Places the element 20px from the right edge */
-    width: 300px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
+position: absolute;
+bottom: 0px;
+right: 0px;
+width: 300px;
+height: auto;
 }
-
 .bottom-center-section2-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 260px;
-    width: 1400px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    z-index: 1000;
-    /* Optional: Ensures the SVG stays on top of other content */
+position: absolute;
+bottom: 0px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 1000;
 }
-
 .skills-section3-image {
-    position: absolute;
-    top: -18px;
-    left: 260px;
-    width: 1400px;
-    height: auto;
-    z-index: 0;
-    /* stays behind */
+position: absolute;
+top: -18px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 0;
 }
-
-
 .skills-section-contact-image {
-    position: absolute;
-    top: -0px;
-    left: 260px;
-    width: 1400px;
-    height: auto;
-    z-index: 0;
-    /* stays behind */
+position: absolute;
+top: -0px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 0;
 }
-
 .right-corner-section4-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    right: 0px;
-    /* Places the element 20px from the right edge */
-    width: 300px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
+position: absolute;
+bottom: 0px;
+right: 0px;
+width: 300px;
+height: auto;
 }
-
 .left-corner-section4-svg {
-    position: absolute;
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 350px;
-    height: auto;
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 350px;
+height: auto;
 }
-
 .right-section4-svg {
-    position: absolute;
-    top: 350px;
-    /* Places the element 20px from the top edge */
-    right: 0px;
-    /* Places the element 20px from the left edge */
-    width: 200px;
-    height: auto;
+position: absolute;
+top: 350px;
+right: 0px;
+width: 200px;
+height: auto;
 }
-
 .left-section4-svg {
-    position: absolute;
-    top: 200px;
-    /* Places the element 20px from the top edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 200px;
-    height: auto;
+position: absolute;
+top: 200px;
+left: 0px;
+width: 200px;
+height: auto;
 }
-
 .bottom-center-section4-svg {
-    position: absolute;
-    /* Positions the element relative to the viewport */
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 260px;
-    width: 1400px;
-    /* Optional: Set a specific width for the SVG */
-    height: auto;
-    /* Optional: Maintain the aspect ratio */
-    z-index: 1000;
-    /* Optional: Ensures the SVG stays on top of other content */
+position: absolute;
+bottom: 0px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 1000;
 }
-
-/* BEGIN Experience Content Changes */
-/*#Work-Experience p {
-    color: #EEDAAE;
-}*/
-
 #Work-Experience {
-    position: relative;
-    z-index: 1;
-    background-color: #202147;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+position: relative;
+z-index: 1;
+background-color: #202147;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
-
 .Experience-content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    padding: 100px 110px 0px 110px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-	transform: translateY(-20%);
-    left: 40px;
+position: relative;
+width: 100%;
+max-width: 1000px;
+padding: 100px 110px 0px 110px;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+transform: translateY(-20%);
+left: 40px;
 }
-
 .Experience-scroll-box {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    /* Firefox */
-    padding-right: 50px;
-    /* New styles for snapping */
-    scroll-snap-type: x mandatory;
-    width: 100%;
+display: flex;
+overflow-x: auto;
+overflow-y: hidden;
+-webkit-overflow-scrolling: touch;
+scroll-behavior: smooth;
+scrollbar-width: none;
+padding-right: 50px;
+scroll-snap-type: x mandatory;
+width: 100%;
 }
-
 .Experience-scroll-box::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari, Opera */
+display: none;
 }
-
 .Experience-card {
-    flex: 0 0 100%; /* Important: Each card takes up 100% of the parent's width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    margin-top: 50px;
-    /* New style for snapping */
-    scroll-snap-align: center;
+flex: 0 0 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 0px;
+margin-top: 50px;
+scroll-snap-align: center;
 }
-
 .date-range {
-    font-family: 'Electroharmonix';
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 60px;
+font-family: 'Electroharmonix';
+font-size: 1.5rem;
+color: #ffffff;
+margin-bottom: 60px;
 }
-
 .Experience-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+margin-bottom: 30px;
 }
-
 .job-title {
-    font-family: 'Electroharmonix';
-    font-size: 2.5rem;
-    color: #E13A4B;
-    margin: 0;
+font-family: 'Electroharmonix';
+font-size: 2.5rem;
+color: #E13A4B;
+margin: 0;
 }
-
 .company-name {
-    font-family: 'Electroharmonix';
-    font-size: 1.5rem;
-    color: #E13A4B;
-    margin: 0;
+font-family: 'Electroharmonix';
+font-size: 1.5rem;
+color: #E13A4B;
+margin: 0;
 }
-
 .Experience-text {
-    max-width: 500px;
-    text-align: center;
-    margin-top: 60px;
+max-width: 500px;
+text-align: center;
+margin-top: 60px;
 }
-
 .Experience-text p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: #ffffff;
-    line-height: 1.5;
+font-family: 'Inter', sans-serif;
+font-size: 1.1rem;
+color: #ffffff;
+line-height: 1.5;
 }
-
 .Experience-text .tech-stack1 {
-    font-weight: bold;
-    color: #e24c4b;
+font-weight: bold;
+color: #e24c4b;
 }
-
-
 .scroll-arrow-Experience {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: none;
+border: none;
+cursor: pointer;
+z-index: 10;
 }
-
 .scroll-arrow-Experience img {
-    width: 50px;
-    height: auto;
+width: 50px;
+height: auto;
 }
-
 .left-arrow-Experience {
-    left: -200px;
+left: -200px;
 }
-
 .right-arrow-Experience {
-    right: -200px;
+right: -200px;
 }
-
 .Experience-title-container {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    text-align: center;
-    width: 250px;
-    height: 50px;
+position: absolute;
+top: 50px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 3;
+text-align: center;
+width: 250px;
+height: 50px;
 }
-
 .Experience-title-container h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    font-size: 2rem;
-    color: #202147;
-    z-index: 4;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+margin: 0;
+font-size: 2rem;
+color: #202147;
+z-index: 4;
 }
-
 .Experience-title-container .title-bg {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
+width: 100%;
+height: auto;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 3;
 }
-/* END Experience Content Changes */
 #Projects {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    z-index: 1;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+z-index: 1;
 }
-
 .projects-content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    min-height: 450px;
-    background-image: url('../assets/Group 25.svg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 0px 98px 0px 98px;
-    box-sizing: border-box;
+position: relative;
+width: 100%;
+max-width: 1000px;
+min-height: 450px;
+background-image: url('../assets/Group 25.svg');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+padding: 0px 98px 0px 98px;
+box-sizing: border-box;
 }
-
 .projects-scroll-box {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    /* Firefox */
-    padding-right: 50px;
+display: flex;
+overflow-x: auto;
+overflow-y: hidden;
+-webkit-overflow-scrolling: touch;
+scroll-behavior: smooth;
+scrollbar-width: none;
+padding-right: 50px;
 }
-
 .projects-scroll-box::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari, Opera */
+display: none;
 }
-
 .project-card {
-    flex: 0 0 auto;
-    width: 100%;
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 0px;
-    position: relative
+flex: 0 0 auto;
+width: 100%;
+min-width: 100%;
+box-sizing: border-box;
+padding: 0px;
+position: relative
 }
-
 #Projects h2 {
-    position: relative;
-    z-index: 1;
-    color: #202147;
-    font-size: 50px;
-    top: 0px;
+position: relative;
+z-index: 1;
+color: #202147;
+font-size: 50px;
+top: 0px;
 }
-
 .project-title-container {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    text-align: center;
-    width: 250px;
-    height: 50px;
+position: absolute;
+top: 30px;
+left: 50%;
+transform: translateX(-50%);
+z-index: 3;
+text-align: center;
+width: 250px;
+height: 50px;
 }
-
 .project-title-container h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    font-size: 2rem;
-    color: #202147;
-    z-index: 4;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+margin: 0;
+font-size: 2rem;
+color: #202147;
+z-index: 4;
 }
-
 .project-title-container .title-bg {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
+width: 100%;
+height: auto;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 3;
 }
-
 .project-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding-top: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 40px;
+padding-top: 60px;
 }
-
 .project-card h1 {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* Or a specific width if you prefer */
-    text-align: center;
-    margin: 0; /* Remove default margin */
-    padding-top: 20px; /* Add some padding to push it down from the very top */
+position: absolute;
+top: 15%;
+left: 50%;
+transform: translateX(-50%);
+width: 100%;
+text-align: center;
+margin: 0;
+padding-top: 20px;
 }
-
-
 .project-logo {
-    width: 120px;
-    height: auto;
-    transform: translateY(50px);
+width: 120px;
+height: auto;
+transform: translateY(50px);
 }
-
 .project-text {
-    max-width: 500px;
-    text-align: left;
-    transform: translateY(50px);
-
+max-width: 500px;
+text-align: left;
+transform: translateY(50px);
 }
-
 .project-text p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: #202147;
+font-family: 'Inter', sans-serif;
+font-size: 1.1rem;
+color: #202147;
 }
-
 .project-text .tech-stack {
-    font-weight: bold;
-    color: #e24c4b;
+font-weight: bold;
+color: #e24c4b;
 }
-
 .scroll-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: none;
+border: none;
+cursor: pointer;
+z-index: 10;
 }
-
 .scroll-arrow img {
-    width: 50px;
-    height: auto;
+width: 50px;
+height: auto;
 }
-
 .left-arrow {
-    left: -300px;
+left: -300px;
 }
-
 .right-arrow {
-    right: -300px;
+right: -300px;
 }
-
 .project-logo {
-    width: 120px;
-    height: auto;
-    transform: translateY(50px);
+width: 120px;
+height: auto;
+transform: translateY(50px);
 }
-
 #Contact-Me h2 {
-    top: -70px;
-    position: relative;
-    z-index: 1;
-    /* pulls text in front */
-    color: #202147;
-    font-size: 50px;
+top: -70px;
+position: relative;
+z-index: 1;
+color: #202147;
+font-size: 50px;
 }
-
-
 #Work-Experience h2 {
-    top: 130px;
-	left: 30px;
-    position: relative;
-    z-index: 1;
-    /* pulls text in front */
-    color: #EEDAAE;
-    font-size: 50px;
-	white-space: nowrap;
+top: 130px;
+left: 30px;
+position: relative;
+z-index: 1;
+color: #EEDAAE;
+font-size: 50px;
+white-space: nowrap;
 }
-
 .left-corner-section3-svg {
-    position: absolute;
-    bottom: 0px;
-    /* Places the element 20px from the bottom edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 350px;
-    height: auto;
+position: absolute;
+bottom: 0px;
+left: 0px;
+width: 350px;
+height: auto;
 }
-
 .left-section3-svg {
-    position: absolute;
-    top: 100px;
-    /* Places the element 20px from the top edge */
-    left: 0px;
-    /* Places the element 20px from the left edge */
-    width: 200px;
-    height: auto;
+position: absolute;
+top: 100px;
+left: 0px;
+width: 200px;
+height: auto;
 }
-
 .right-section3-svg {
-    position: absolute;
-    top: 280px;
-    /* Places the element 20px from the top edge */
-    right: 0px;
-    /* Places the element 20px from the left edge */
-    width: 170px;
-    height: auto;
+position: absolute;
+top: 280px;
+right: 0px;
+width: 170px;
+height: auto;
 }
-
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
-
-/* Add basic styling for new sections to create height */
 .content-section {
-    min-height: 100vh;
-    /* This is key! It ensures each section takes up at least the full viewport height */
-    padding: 50px;
-    box-sizing: border-box;
-    /* Ensures padding is included in the height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Centers the content vertically in each section */
-    align-items: center;
-    text-align: center;
-    font-family: 'Electroharmonix';
+min-height: 100vh;
+padding: 50px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-family: 'Electroharmonix';
 }
-
 #Skills {
-    position: relative;
-    z-index: 1;
-    background-color: #202147;
-    margin-top: -91px;
+position: relative;
+z-index: 1;
+background-color: #202147;
+margin-top: -91px;
 }
-
 #Contact-Me {
-    position: relative;
-    z-index: 1;
+position: relative;
+z-index: 1;
 }
-
 #Work-Experience {
-    position: relative;
-    z-index: 1;
-    background-color: #202147;
+position: relative;
+z-index: 1;
+background-color: #202147;
 }
-
 .skills-image {
-    position: absolute;
-    top: -1px;
-    left: 260px;
-    width: 1400px;
-    height: auto;
-    z-index: 0;
-    /* stays behind */
+position: absolute;
+top: -1px;
+left: 260px;
+width: 1400px;
+height: auto;
+z-index: 0;
 }
-
 #Skills h2 {
-    top: -20px;
-    position: relative;
-    z-index: 1;
-    /* pulls text in front */
-    color: #EEDAAE;
-    font-size: 50px;
+top: -20px;
+position: relative;
+z-index: 1;
+color: #EEDAAE;
+font-size: 50px;
 }
-
 #Skills ul {
-    position: relative;
-    z-index: 1;
-    /* pulls text in front */
-    text-align: center;
+position: relative;
+z-index: 1;
+text-align: center;
 }
-
-/* Styling for the social media icons container */
 .social-icons {
-    position: absolute;
-    /* Keep the icons in a fixed position on the screen */
-    top: 50%;
-    /* Position the container vertically in the middle of the viewport */
-    left: 20px;
-    /* Adjust this value to set the distance from the left edge */
-    transform: translateY(-50%);
-    /* Adjust the vertical position to be exactly centered */
-    display: flex;
-    flex-direction: column;
-    /* Stack the icons vertically */
-    gap: 40px;
-    /* Add some space between the icons */
-    z-index: 1000;
-    /* Ensure the icons are on top of other content */
+position: absolute;
+top: 50%;
+left: 20px;
+transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+gap: 40px;
+z-index: 1000;
 }
-
-/* Styling for the individual icon links */
 .social-icons a {
-    display: block;
-    /* Make the link a block-level element for better spacing */
-    width: 60px;
-    /* Set a fixed width for the icons */
-    height: 40px;
-    /* Set a fixed height for the icons */
+display: block;
+width: 60px;
+height: 40px;
 }
-
-/* Styling for the icon images themselves */
 .social-icons img {
-    width: 100%;
-    /* Make the image fill the anchor tag */
-    height: auto;
-    /* Maintain the image's aspect ratio */
-    transition: transform 0.3s ease-in-out;
-    /* Add a smooth transition for the hover effect */
+width: 100%;
+height: auto;
+transition: transform 0.3s ease-in-out;
 }
-
-/* Hover effect for the icons */
 .social-icons a:hover img {
-    transform: scale(1.1);
-    /* Slightly enlarge the icon on hover */
+transform: scale(1.1);
 }
-
-
-/* Styling for the skills grid container */
 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    /* Adjust the space between boxes */
-    position: relative;
-    z-index: 1;
-    margin-top: 50px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: flex-start;
+gap: 40px;
+position: relative;
+z-index: 1;
+margin-top: 50px;
 }
-
-/* Styling for the individual skill boxes */
 .skill-box {
-    width: 300px;
-    /* Adjust the width of the boxes */
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Semi-transparent white background */
-    border: 2px solid #e24c4b;
-    /* Red border from your design */
-    border-radius: 15px;
-    /* Rounded corners for the boxes */
-    text-align: center;
-    color: #EEDAAE;
-    /* Light text color */
+width: 300px;
+padding: 30px;
+background-color: rgba(255, 255, 255, 0.1);
+border: 2px solid #e24c4b;
+border-radius: 15px;
+text-align: center;
+color: #EEDAAE;
 }
-
-/* Styling for the headings inside the boxes */
 .skill-box h3 {
-    font-size: 1.5rem;
-    color: #e24c4b;
-    /* Red color for the heading */
-    margin-bottom: 20px;
+font-size: 1.5rem;
+color: #e24c4b;
+margin-bottom: 20px;
 }
-
-/* Styling for the lists inside the boxes */
 .skill-box ul {
-    list-style: none;
-    /* Remove default list bullets */
-    padding: 0;
-    margin: 0;
+list-style: none;
+padding: 0;
+margin: 0;
 }
-
-/* Styling for the list items */
 .skill-box ul li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+font-size: 1.2rem;
+margin-bottom: 10px;
 }
-
 #scrollToTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    /* Initially hide the button */
-    background-color: #e24c4b;
-    /* Your accent color */
-    color: #EEDAAE;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    z-index: 1000;
-    /* Ensure it's on top of other content */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    /* Use opacity for the fade-in effect */
+position: fixed;
+bottom: 20px;
+right: 20px;
+display: none;
+background-color: #e24c4b;
+color: #EEDAAE;
+border: none;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+cursor: pointer;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+transition: opacity 0.3s ease-in-out;
+opacity: 0;
 }
-
 #scrollToTopBtn img {
-    width: 25px;
-    /* Adjust the size of the arrow icon */
-    height: 25px;
-    filter: brightness(10);
-    /* Make the arrow brighter for contrast */
+width: 25px;
+height: 25px;
+filter: brightness(10);
 }
-
 #scrollToTopBtn:hover {
-    background-color: #d13c3b;
-    /* A slightly darker shade on hover */
+background-color: #d13c3b;
 }
-
-/* Class to show the button */
 #scrollToTopBtn.show {
-    display: block;
-    opacity: 1;
+display: block;
+opacity: 1;
 }
-
-/* Contact Form Container */
 .contact-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: -100px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: -100px;
 }
-
-/* Contact Form Styling */
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    /* light transparent background */
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+background: rgba(255, 255, 255, 0.1);
+padding: 40px;
+border-radius: 20px;
+backdrop-filter: blur(10px);
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+width: 90%;
+max-width: 500px;
 }
-
-/* Input and Textarea Styling */
 .contact-form input,
 .contact-form textarea {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: #333;
-    font-size: 1rem;
-    outline: none;
-    transition: border 0.3s ease;
+padding: 15px;
+border: 1px solid #ccc;
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.4);
+color: #333;
+font-size: 1rem;
+outline: none;
+transition: border 0.3s ease;
 }
-
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #666;
+color: #666;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #e24c4b;
+border-color: #e24c4b;
 }
-
-/* Submit Button */
 .contact-form button {
-    background-color: #e24c4b;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+background-color: #e24c4b;
+color: white;
+border: none;
+padding: 15px;
+border-radius: 10px;
+cursor: pointer;
+font-size: 1rem;
+transition: background-color 0.3s ease;
 }
-
 .contact-form button:hover {
-    background-color: #c63d3c;
+background-color: #c63d3c;
 }
-
-/* Form row to contain label and input */
 .contact-form .form-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 2px solid #5a4b7f;
-    /* Blue border */
-    border-radius: 15px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    /* Semi-transparent white */
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+border: 2px solid #5a4b7f;
+border-radius: 15px;
+padding: 10px;
+background-color: rgba(255, 255, 255, 0.5);
 }
-
-/* Styling for the labels */
 .contact-form .form-row label {
-    width: 150px;
-    /* Adjust as needed */
-    text-align: right;
-    margin-right: 20px;
-    color: #5a4b7f;
-    /* Blue text color */
-    font-family: 'Electroharmonix';
-    font-size: 1.2rem;
+width: 150px;
+text-align: right;
+margin-right: 20px;
+color: #5a4b7f;
+font-family: 'Electroharmonix';
+font-size: 1.2rem;
 }
-
-/* Styling for the inputs and textarea */
 .contact-form .form-row input,
 .contact-form .form-row textarea {
-    flex-grow: 1;
-    /* Allow the input/textarea to take up remaining space */
-    border: none;
-    background-color: transparent;
-    color: #202147;
-    font-family: 'Electroharmonix';
-    font-size: 1.2rem;
-    padding: 5px;
+flex-grow: 1;
+border: none;
+background-color: transparent;
+color: #202147;
+font-family: 'Electroharmonix';
+font-size: 1.2rem;
+padding: 5px;
 }
-
-/* Adjust the input and textarea placeholders */
 .contact-form .form-row input::placeholder,
 .contact-form .form-row textarea::placeholder {
-    color: #a0a0a0;
-    font-family: 'Electroharmonix';
+color: #a0a0a0;
+font-family: 'Electroharmonix';
 }
-
-/* Hide the default placeholder on focus, if desired */
 .contact-form .form-row input:focus::placeholder,
 .contact-form .form-row textarea:focus::placeholder {
-    color: transparent;
+color: transparent;
 }
-
-
-
-/* Hide the mobile warning by default */
 .mobile-not-supported {
-  display: none;
-  text-align: center;
-  padding: 20px;
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  border-radius: 5px;
-  font-family: 'Electroharmonix', sans-serif;
+display: none;
+text-align: center;
+padding: 20px;
+background-color: #f8d7da;
+color: #721c24;
+border: 1px solid #f5c6cb;
+border-radius: 5px;
+font-family: 'Electroharmonix', sans-serif;
 }
-
-/* Use a media query to show the warning and hide the main content on small screens */
 @media (max-width: 768px) {
-  body > *:not(.mobile-not-supported) {
-    display: none;
-  }
-  .mobile-not-supported {
-    display: block;
-  }
+body > *:not(.mobile-not-supported) {
+display: none;
 }
-/* Custom Audio Player Styles */
+.mobile-not-supported {
+display: block;
+}
+}
 .custom-audio-player {
-    position: fixed;
-    bottom: 20px;
-    left: 3%; /* Keep this to position the player from the left edge */
-    z-index: 1001;
-    display: flex;
-    justify-content: center; /* Aligns items to the start (left) of the container */
-    align-items: center;
-    padding: 10px;
-    background-color: #202147;
-    border: 2px solid #e24c4b;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-
-    /* Initially sized for just the play/pause button */
-    width: 60px;
-    height: 60px;
-    
-    /* Smooth transitions for the size change */
-    transition: width 0.4s ease-in-out;
+position: fixed;
+bottom: 20px;
+left: 3%;
+z-index: 1001;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
+background-color: #202147;
+border: 2px solid #e24c4b;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+width: 60px;
+height: 60px;
+transition: width 0.4s ease-in-out;
 }
-
-/* Expand the player on hover */
 .custom-audio-player:hover {
-    width: 350px; /* Adjust to your desired expanded width */
+width: 350px;
 }
-
-/* Controls container (hidden by default) */
 .controls-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 0;
-    overflow: hidden;
-    opacity: 0;
-    margin-left: 0;
-    transition: max-width 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-left 0.4s ease-in-out;
+display: flex;
+align-items: center;
+gap: 15px;
+max-width: 0;
+overflow: hidden;
+opacity: 0;
+margin-left: 0;
+transition: max-width 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-left 0.4s ease-in-out;
 }
-
-/* Show controls on hover */
 .custom-audio-player:hover .controls-container {
-    max-width: 300px; /* A width large enough to show the controls */
-    opacity: 1;
-    margin-left: 15px;
+max-width: 300px;
+opacity: 1;
+margin-left: 15px;
 }
-
 #myAudio {
-    display: none; /* Hide the native audio element */
+display: none;
 }
-
 #playPauseBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    transition: transform 0.2s ease-in-out;
-    flex-shrink: 0;
+background: none;
+border: none;
+cursor: pointer;
+padding: 0;
+width: 40px;
+height: 40px;
+transition: transform 0.2s ease-in-out;
+flex-shrink: 0;
 }
-
 #playPauseBtn img {
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 }
-
 #playPauseBtn:hover {
-    transform: scale(1.1);
+transform: scale(1.1);
 }
-
 .progress-bar-container {
-    width: 200px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-    flex-grow: 1;
+width: 200px;
+height: 10px;
+background-color: rgba(255, 255, 255, 0.2);
+border-radius: 5px;
+overflow: hidden;
+cursor: pointer;
+flex-grow: 1;
 }
-
 .progress-bar {
-    width: 0;
-    height: 100%;
-    background-color: #e24c4b;
-    border-radius: 5px;
-    transition: width 0.1s linear;
+width: 0;
+height: 100%;
+background-color: #e24c4b;
+border-radius: 5px;
+transition: width 0.1s linear;
 }
-
 .volume-control {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100px;
-    height: 10px;
-    background: transparent;
-    cursor: pointer;
-    flex-shrink: 0;
+-webkit-appearance: none;
+appearance: none;
+width: 100px;
+height: 10px;
+background: transparent;
+cursor: pointer;
+flex-shrink: 0;
 }
-
-/* For WebKit browsers (Chrome, Safari) */
 .volume-control::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 10px;
-    background: #343560; /* Use a solid dark color for the track */
-    border-radius: 5px;
+width: 100%;
+height: 10px;
+background: #343560;
+border-radius: 5px;
 }
-
 .volume-control::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #e24c4b; /* Solid red background for the thumb */
-    border: 2px solid #EEDAAE; /* The solid light border for the ring effect */
-    border-radius: 50%;
-    margin-top: -3.5px;
-    cursor: pointer;
+-webkit-appearance: none;
+appearance: none;
+width: 15px;
+height: 15px;
+background: #e24c4b;
+border: 2px solid #EEDAAE;
+border-radius: 50%;
+margin-top: -3.5px;
+cursor: pointer;
 }
-
-/* For Firefox */
 .volume-control::-moz-range-track {
-    width: 100%;
-    height: 10px;
-    background: #343560; /* Use a solid dark color for the track */
-    border-radius: 5px;
+width: 100%;
+height: 10px;
+background: #343560;
+border-radius: 5px;
 }
-
 .volume-control::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    background: #e24c4b; /* Solid red background for the thumb */
-    border: 2px solid #EEDAAE; /* The solid light border for the ring effect */
-    border-radius: 50%;
-    cursor: pointer;
+width: 15px;
+height: 15px;
+background: #e24c4b;
+border: 2px solid #EEDAAE;
+border-radius: 50%;
+cursor: pointer;
 }
-
-/* --- Preloader Styles --- */
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #202147; /* Matches your dark background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    /* This transition fades out the preloader */
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #202147;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
-
 .preloader-content {
-    text-align: center;
+text-align: center;
 }
-
 .preloader-moon {
-    width: 250px; /* Adjust size as needed */
-    height: auto;
-    animation: rotate 2s linear infinite; /* Applies the rotation animation */
+width: 250px;
+height: auto;
+animation: rotate 2s linear infinite;
 }
-
 .preloader-text {
-    font-family: 'Electroharmonix';
-    color: #EEDAAE; /* Matches your accent color */
-    font-size: 2rem;
-    margin-top: 20px;
+font-family: 'Electroharmonix';
+color: #EEDAAE;
+font-size: 2rem;
+margin-top: 20px;
 }
-
-/* --- Preloader Animations --- */
-/* Keyframes for the rotation effect on the moon logo */
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+from {
+transform: rotate(0deg);
 }
-
-/* Class to hide the preloader after the page loads */
+to {
+transform: rotate(360deg);
+}
+}
 #preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
+opacity: 0;
+visibility: hidden;
+}
+::-webkit-scrollbar {
+width: 12px;
+}
+::-webkit-scrollbar-track {
+background: #EEDAAE;
+border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+background-color: #e24c4b;
+border-radius: 10px;
+border: 2px solid #EEDAAE;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color: #d13c3b;
+}
+html {
+scrollbar-width: thin;
+scrollbar-color: #e24c4b #202147;
 }
