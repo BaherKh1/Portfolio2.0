@@ -378,6 +378,7 @@ img.logo {
     align-items: center;
     flex-direction: column;
 	transform: translateY(-20%);
+    left: 40px;
 }
 
 .Experience-scroll-box {
@@ -531,7 +532,7 @@ img.logo {
     background-image: url('../assets/Group 25.svg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    padding: 0px 110px 0px 110px;
+    padding: 0px 98px 0px 98px;
     box-sizing: border-box;
 }
 
@@ -557,6 +558,7 @@ img.logo {
     min-width: 100%;
     box-sizing: border-box;
     padding: 0px;
+    position: relative
 }
 
 #Projects h2 {
@@ -603,7 +605,20 @@ img.logo {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    padding-top: 60px;
 }
+
+.project-card h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Or a specific width if you prefer */
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    padding-top: 20px; /* Add some padding to push it down from the very top */
+}
+
 
 .project-logo {
     width: 120px;
@@ -614,7 +629,7 @@ img.logo {
 .project-text {
     max-width: 500px;
     text-align: left;
-    transform: translateY(100px);
+    transform: translateY(50px);
 
 }
 
