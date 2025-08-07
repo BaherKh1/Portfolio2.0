@@ -939,3 +939,12 @@ html {
 scrollbar-width: thin;
 scrollbar-color: #e24c4b #202147;
 }
+
+img, svg {
+  user-select: none;
+  pointer-events: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
