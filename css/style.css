@@ -276,7 +276,13 @@ scroll-snap-align: center;
 font-family: 'Electroharmonix';
 font-size: 1.5rem;
 color: #ffffff;
-margin-bottom: 60px;
+margin-bottom:10px;
+}
+.Years-Experience {
+font-family: 'Electroharmonix';
+font-size: 1.5rem;
+color: #ffffff;
+
 }
 .Experience-details {
 display: flex;
