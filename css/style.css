@@ -444,8 +444,8 @@ z-index: 3;
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 40px;
-padding-top: 60px;
+gap: 66px;
+padding-top: 100px;
 }
 .project-card h1 {
 position: absolute;
@@ -461,6 +461,7 @@ padding-top: 20px;
 width: 120px;
 height: auto;
 transform: translateY(50px);
+padding-bottom: 80px;
 }
 .project-text {
 max-width: 500px;
